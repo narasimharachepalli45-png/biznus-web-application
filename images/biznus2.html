@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Sen, sans-serif;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        div {
+            display: block;
+        }
+        .top-div {
+            position: sticky;
+            top: 0%;
+            z-index: 900;
+        }
+        .top1-div {
+            background-color: black;
+            width: 100%;
+            height: 70px;
+        }
+        .annou-div-matt {
+            background-color: #eb5757;
+            color: white;
+            width: 150px;
+            border-radius: 15px;
+            padding: 5px 20px;
+            margin-right: 10px;
+            float: left;
+        }
+        .menu-con {
+            background-color: #eb5757;
+            height: 80px;
+            align-items: center;
+            display: flex;
+            position: relative;
+        }
+        .menu-list a  {
+            font-size: 25px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            margin-left: 20px;
+            padding: 4px 20px;
+            border-radius: 5px;
+            transition: all 300ms ease;
+            background-color: transparent white;
+        }
+        a:hover {
+            background-color: white;
+            color: black;
+        }
+        .hero-heading {
+            position: absolute;
+            color: black;
+            font-size: 60px;
+            top: 188px;
+            left: 16px;
+        }
+        .hero-para {
+            position: absolute;
+            top: 450px;
+            color: white;
+            font-size: 25px;
+            left: 16px;
+        }
+        .hero-btn a {
+            position: absolute;
+            text-decoration: none;
+            top: 600px;
+            left: 16px;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        .support-section {
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }
+        .support-cont {
+            display: flex;
+            margin-bottom: 40px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .support-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .support-left-top {
+            text-transform: uppercase;
+        }
+        .support-top-heading {
+            margin-top: 0px;
+            font-size: 40px;
+            margin-bottom: 0px;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        .support-right {
+            width: 45%;
+        }
+        .support-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }.support-column {
+            width: 30%;
+            min-height: 200px;
+        }
+        .support-squre {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 45px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: #222;
+            min-height: 330px;
+            max-width: 250px;
+        }
+        .suport-squre-number {
+            position: absolute;
+            left: 10%;
+            top: 10%;
+            right: auto;
+            bottom: auto;
+            color: #f9f9f9;
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .support-squre-text {
+            color: #f9f9f9;
+            line-height: 1.2;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            max-width: 150px;
+        }
+        .support-square-image {
+            position: absolute;
+            left: auto;
+            top: auto;
+            right: -25%;
+            bottom: -25%;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border: 0;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .safe-section {
+            min-height: 550px;
+        }
+        .safe-wrapper {
+            display: flex;
+            min-height: 550px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .safe-heading {
+            color: #444;
+            font-size: 45px;
+            line-height: 1.2;
+            text-align: right;
+            width: 55%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            top: 1988px;
+            right: 15px;
+            position: absolute;
+            font-weight: bold;
+        }
+        .safe-para {
+            position: absolute;
+            margin-bottom: 25px;
+            color: #f9f9f9;
+            text-align: right;
+            font-size: 18px;
+            top: 2150px;
+            width: 45%;
+            right: 15px;
+        }
+        .safe-btn-wrapper a {
+            position: absolute;
+            top: 2250px;
+            right: 40px;
+            text-decoration: none;
+            color: black;
+
+        }
+        .btn-light-hero-safe-w-button a {
+            margin-right: 10px;
+            border-color: #f9f9f9;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: black;
+            padding: 5px 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 5px;
+        }
+        .product-sec {
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }l
+        .shop-top-wrap {
+            display: flex;
+            margin-bottom: 40px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .shop-top-left {
+            display: flex;
+            flex-direction: column;
+            top: 2650px;
+            position: absolute;
+            left: 40px;
+        }
+        .shop-top-text {
+            text-transform: uppercase;
+        }
+        .shop-top-heading {
+            margin-top: 0%;
+            margin-bottom: 0%;
+            font-size: 40px;
+        }
+        .product-list-items {
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-column-gap: 16px;
+            grid-row-gap: 16px;
+            grid-template-rows: auto auto;
+        }
+        .item1-details {
+            font-size: 20px;
+            color: black;
+            font-weight: 400;
+        }
+        .list-item {
+            display: flex;
+            padding: 14px 16px;
+            top: 2850px;
+            position: absolute;
+            justify-content: space-between;
+        }
+        
+        .view-button {
+            background-color: black;
+            color: white;
+            padding: 12px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+        }
+        .view-button:hover{
+            background-color: #eb5757;
+            color: black;
+        }
+        .view-products {
+            display: flex;
+            justify-content: center;
+        }
+        .shop-local-para {
+            background-color: #222;
+            color: #f9f9f9;
+            display: flex;
+            width: 80%;
+            float: right;
+            height: 400px;
+            padding: 45px;
+            justify-content: flex-end;
+            border-radius: 5px;
+        }
+        .local {
+            font-size: 40px;
+            line-height: 1.2;
+        }
+        .local-para {
+            width: 600px;
+        }
+        .cust-img{
+            position: absolute;
+            top: 3400px;
+        }
+        .fotter-div {
+            background-color: black;
+            height: 300px;
+            width: 1330px;
+            position: absolute;
+            top: 3800px;
+        }
+        .web {
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 0%;
+            justify-content: center;
+            left: 610px;
+        }
+        .icons {
+            justify-content: space-between;
+            float: right;
+            padding: 12px 14px;
+            position: absolute;
+            left: 1100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-div">
+        <div class="top1-div">    
+            <div class="annou-div">
+                <div class="annou-div-matt">Announcement</div>
+                <div style="color: white;">How we are responding to COVID-19</div>
+            </div>
+        </div>
+    
+    <div class="container">
+        <div class="menu-con">
+            <div class="menu-list">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#shop">Shop</a>
+                <a href="#donate">Donate</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="img1">
+        <img src="g1.jpg" style="width: 1335px;">
+        <h1 class="hero-heading">
+            Serving you
+            <br>
+            Since 1989
+        </h1>
+        <p class="hero-para">
+            Acme Outdoors is an outdoor and adventure<br>
+            shop located in the Boathouse District in<br>
+            Oklahoma City.
+        </p>
+        <div class="hero-btn">
+            <a href="#shop">Shop merch</a>
+        </div>
+    </div>
+    <div class="support-section">
+        <div class="support-cont">
+            <div class="support-left">
+                <div class="support-left-top">Ways To Support</div>
+                <h2 class="support-top-heading">Support Acme Outdoors</h2>
+            </div>
+            <div class="support-right">
+                <p>
+                    COVID-19 has forced us to close our retail space, but we need support from patrons like yourself now more than ever. Below, we’ve listed the best ways to help us through this season.
+                </p>
+            </div>
+        </div>
+        <div class="support-wrapper">
+            <div class="support-column">
+                <div class="support-squre">
+                    <div class="suport-squre-number">01</div>
+                    <div class="support-squre-text">
+                        SHOP
+                        <br>
+                        PRODUCTS
+                    </div>
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e7ff57a5836db2a07bab0e3_Circle.svg" alt="Circle Decoration in Shop Products Block" class="support-square-image">
+
+                </div>
+                <p>Our full product line is still available online here on our site! Getting outside and hiking is still something you can do. Get your gear now!</p>
+            </div>
+            <div class="support-column">
+                <div class="support-squre">
+                    <div class="suport-squre-number">02</div>
+                    <div class="support-squre-text">
+                        DONATE
+                    </div>
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e7ff57adc54453434efb9ee_Triangle.svg" alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+                </div>
+                <p>Since we've changed the way we operate to online only, and to ensure your safety, not all our staff is working. Donate to keep them afloat.</p>
+            </div>
+            <div class="support-column">
+                <div class="support-squre">
+                    <div class="suport-squre-number">03</div>
+                    <div class="support-squre-text">
+                        BUY
+                        <br>
+                        GIFT CARDS
+                    </div>
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e7ff57afea9a31a44d66db0_Rectangle.svg" alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+                </div>
+                <p>Have all the outdoor gear you need for now? Buy a gift card and use it later or share it with friends and family.</p>
+            </div>
+        </div>
+    </div>
+    <div class="safe-section">
+        <img src="g2.jfif" style="width: 1335px;height: 800px;">
+        <div class="safe-wrapper">
+            <h2 class="safe-heading">How we're keeping you safe during COVID-19</h2>
+            <p class="safe-para">As an outdoor shop, we’ve taken precautionary measures to ensure the safety of all our customers and team members.</p>
+            <div class="safe-btn-wrapper">
+                <a href="/alert/how-were-responding-to-covid-19" class="btn light hero safe w-button">Read Our Statement</a>
+            </div>
+        </div>
+    </div>
+    <div class="product-sec">
+        <div class="shop-top-wrap">
+            <div class="shop-top-left">
+                <div class="shop-top-text">shop products</div>
+                <p class="shop-top-heading">Open 24/7/365</p>
+            </div>
+        </div>
+        <div class="product-list-wrapper">
+            <div class="product-list-items" role="list">
+                <div role="listitem" class="list-item">
+                    <div class="shop-item1">
+                        <img src="g3.jfif">
+                        <div class="item1-details">
+                           <div class="item1-name">White Tent</div>
+                           <div class="item1-price">$200.00 usd</div>
+                        </div>
+                        <div class="item1-btn">
+                            <button type="button">Details</button>
+                        </div>
+                    </div>
+                    <div class="shop-item2">
+                        <img src="g4.jfif">
+                        <div class="item2-details">
+                           <div class="item2-name">Tin Coffee Tumbler</div>
+                           <div class="item2-price">$200.00 usd</div>
+                        </div>
+                        <div class="item2-btn">
+                            <button type="button">Details</button>
+                        </div>
+                    </div>
+                    <div class="shop-item3">
+                        <img src="g5.jfif">
+                        <div class="item3-details">
+                           <div class="item3-name">Blue Canvas Pack</div>
+                           <div class="item3-price">$200.00 usd</div>
+                        </div>
+                        <div class="item3-btn">
+                            <button type="button">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="view-products">
+        <button type="button" class="view-button">View All Products</button>
+    </div>
+    <br>
+    <br><br><br>
+    <div class="shop-local-sec">
+        <div class="shop-local-para">
+            <h2 class="local">Shop Local</h2><br><br>
+            <p class="local-para">We know that during COVID-19, a lot of folks around the city and state are feeling uneasy about the future - we’re not sure what the future holds either.
+
+               That said: we know that we love making sure you have the gear you need for your adventures, and we’re going to keep doing that - with our team - until the city tells us we can’t.
+
+                But as long as folks like yourself support small businesses around the city, then we’ll be here — every day, making sure your orders arrive on time.
+
+               -------
+
+               Jane & John Doe
+               Acme Outdoors</p>
+        </div>
+        <div class="cust-img">
+            <img src="g6.jfif" width="380px" height="350px">
+        </div>
+    </div>
+    <div class="fotter-div">
+        <p class="web">made in <a href="#WebFlow">WebFlow</a>.@2020</p>
+        <div class="icons">
+            <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e8407a25b6234aeec960fb9_Twitter_Social_Icon_Rounded_Square_White.svg" width="30" alt="Twitter Logo">
+            <a href="https://www.facebook.com/webflow" class="social-footer-link w-inline-block"><img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e8407aa3fb6cf5576f1658b_Facebook%20Logo.svg" width="30" alt="Facebook Logo"></a>
+            <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e840774014326b74bbeeeb6_Insta.svg" width="30" alt="Instagram Logo">
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          * {
+            box-sizing: border-box;
+        }
+        div {
+            display: block;
+            unicode-bidi: isolate;
+        }
+        body {
+            font-family: Sen, sans-serif;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            background-color: #fff;
+            min-height: 100;
+        }
+        .menu-wrapper1 {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+        .banner {
+            display: block;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #222;
+            color: #f9f9f9;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .w-inline-block {
+            max-width: 100%;
+        }
+        @media screen and (max-width: 991px) {
+            .container {
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .banner-content-wrapper {
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        .pill.primary {
+            background-color: #eb5757;
+            font-size: 16px;
+        }
+        .pill {
+            margin-right: 10px;
+            padding: 5px 20px;
+            border-radius: 20px;
+            color: #f9f9f9;
+        }
+        .w-dyn-menu {
+            background-color: #eb5757;
+            display: block;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #f9f9f9;
+            font-size: 18px;
+            text-decoration: none;
+            position: sticky;
+        }
+        .nav-wrapper {
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .w-nav-brand {
+            position: relative;
+            float: left;
+            text-decoration: none;
+            color: #333333;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border: 0;
+        }
+        .cart-nav-wrapper {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        @media screen and (max-width: 991px) {
+        .w-nav[data-collapse="medium"] .w-nav-menu {
+            display: none;
+            }
+        }
+        @media screen and (max-width: 991px) {
+        .nav-menu {
+            width: 100vw;
+            padding-top: 140px;
+            padding-bottom: 30px;
+            background-color: #eb5757;
+            }
+        }
+        .w-nav-menu {
+            position: relative;
+            float: right;
+        }
+        .nav-link.w--current {
+            color: #f9f9f9;
+        }
+        @media screen and (max-width: 991px) {
+        .nav-link {
+            font-size: 30px;
+            text-align: center;
+            }
+        }
+        .nav-link {
+            margin-right: 20px;
+            margin-left: 20px;
+            padding: 4px 10px;
+            border-radius: 5px;
+            transition: all 300ms ease;
+        }
+        .w-nav-link {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            text-decoration: none;
+            color: #f9f9f9;
+        }
+        a {
+            background-color: transparent;
+        }
+        .nav-menu a:hover {
+            background-color: #222;
+            color: #f9f9f9;
+        } 
+        .menu-wrapper {
+            position: sticky;
+            top: 0px;
+            z-index: 900;
+        }
+        .contact-hero-section {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #222;
+            color: #f9f9f9;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-hero-bg-wrapper {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: reverse;
+            flex-direction: column-reverse;
+            }
+        }
+        .contact-hero-bg-wrapper {
+            position: relative;
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 991px) {
+        .container.contact {
+            position: static;
+            padding-bottom: 35px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .heading {
+            margin-top: 55px;
+        }
+        h1 {
+            font-size: 38px;
+            line-height: 44px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-block-wrapper {
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            }
+        }
+        .contact-block-wrapper {
+            display: flex;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-block {
+            width: 48%;
+            margin-right: 0px;
+            }
+        }
+        .contact-block {
+            display: flex;
+            min-height: 350px;
+            margin-top: 25px;
+            padding: 40px;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #222;
+            text-align: center;
+        }
+        .contact-icon {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border: 0;
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: bold;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 5px 25px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #eb5757;
+            border-radius: 5px;
+            background-color: #eb5757;
+            transition: border-color 300ms ease, background-color 300ms ease;
+            font-weight: 700;
+        }
+        .w-button {
+            display: inline-block;
+            color: white;
+            border: 0;
+            line-height: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-block {
+            width: 48%;
+            margin-right: 0px;
+            }
+        }
+        .contact-block {
+            display: flex;
+            min-height: 350px;
+            margin-top: 25px;
+            padding: 40px;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #222;
+            text-align: center;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-image-div {
+            width: 100%;
+            height: 350px;
+            background-image: linear-gradient(0deg, #222, rgba(34, 34, 34, 0.18) 76%), url(/images/cont.jpg);
+            background-position: 0px 0px, 30% 35%;
+            background-size: auto, cover;
+            background-repeat: repeat, no-repeat;
+            }
+        }
+        .content-section {
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-wrapper {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            }
+        }
+        .contact-wrapper {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-left {
+            width: 100%;
+            margin-bottom: 20px;
+            }
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: bold;
+        }
+        @media screen and (max-width: 991px) {
+        .contact-right {
+            width: 100%;
+            padding-left: 0px;
+            }
+        }
+        .w-form {
+            margin: 0 0 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        .input {
+            border: 1px solid #222;
+            border-radius: 5px;
+        }
+        .w-input, .w-select {
+            display: block;
+            width: 100%;
+            height: 38px;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333333;
+            background-color: #ffffff;
+        }
+        .success {
+            min-height: 280px;
+            padding-top: 125px;
+            border-radius: 5px;
+            background-color: #20c788;
+            color: #f9f9f9;
+        }
+        .w-form-done {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .error {
+            border-radius: 5px;
+            background-color: #e53935;
+            color: #f9f9f9;
+        }
+        .w-form-fail {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .footer {
+            padding-top: 65px;
+            padding-bottom: 10px;
+            background-color: #222;
+        }
+        .footer-wrapper {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            border: 0;
+        }
+        .social-footer-link {
+            margin-left: 20px;
+            transition: all 300ms ease;
+        }
+        .footer-bottom-wrapper {
+            margin-top: 55px;
+            color: #f9f9f9;
+            text-align: center;
+        }
+        .small.footer-small {
+            font-size: 12px;
+        }
+        .small {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #eb5757;
+            text-decoration: underline;
+            background-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu-wrapper1">
+    <div class="menu-wrapper">
+        <div class="w-dyn-list">
+            <div role="list" class="w-dyn-items">
+                <div role="listitem" class="w-dyn-item">
+                    <a href="/alert/how-were-responding-to-covid-19" class="banner w-inline-block">
+                        <div class="container">
+                            <div class="banner-content-wrapper">
+                                <div class="pill primary alert-bar">Announcement</div>
+                                <div>How we're responding to COVID-19</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="w-dyn-menu">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e7ff57adad44d1f072965b6_logo.svg" alt="Acme Outdoors Logo">
+                </a>
+                <div class="cart-nav-wrapper">
+                    <nav role="navigation" class="nav-menu w-nav-menu">
+                        <a href="/" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
+                        <a href="/about" class="nav-link w-nav-link">About</a>
+                        <a href="/shop" class="nav-link w-nav-link">Shop</a>
+                        <a href="/donations" class="nav-link w-nav-link">Donate</a>
+                        <a href="/contact" class="nav-link w-nav-link">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="contact-hero-section">
+    <div class="contact-hero-bg-wrapper">
+        <div class="container contact">
+            <h1 class="heading">Contact Acme Outdoors</h1>
+            <div class="contact-block-wrapper">
+                <div class="contact-block">
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e84ba313e8232516a7da902_chat-alt.svg" alt="" class="contact-icon">
+                    <h2>Contact Us</h2>
+                    <p>Just want to say hi?&nbsp;We'd love to hear from you. We love our customers and community!&nbsp;</p>
+                    <a href="#contact" class="btn w-button">Send Us A Message</a>
+                </div>
+                <div class="contact-block">
+                    <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e850414db1f6ebfba8bc42d_chat-warning.svg" alt="" class="contact-icon">
+                    <h2>Get Support</h2>
+                    <p>Have an issue with an order or with a product you purchased from us?&nbsp;Fill out our support form.</p>
+                    <a href="https://university.webflow.com/support" target="_blank" class="btn w-button">Contact Support</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-image-div"></div>
+    </div>
+</div>
+<div id="contact" class="content-section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-left">
+                <h2>Contact Us</h2>
+                <div class="w-richtext">
+                    <p>Acme Outdoors<br>123 Rainy Street<br>Oklahoma City, OK 73129</p>
+                    <p>‍<br><strong>General Inquiries:</strong>&nbsp;(405) 555-5555<br><strong>Customer Support:</strong>&nbsp;(405) 555-5556</p>
+                </div>
+            </div>
+            <div class="contact-right">
+                <h2>Contact Form</h2>
+                <p>Send us a message and we'll get back to you as soon as we can! </p>
+                <div class="w-form">
+                    <form id="email-form" name="email-form" data-name="Email Form" method="get" data-wf-page-id="5e84fa102a9eae9dcc4627da" data-wf-element-id="fe567e25-f54e-e832-b312-e1ed2dc1cad8">
+                        <label for="name">Name</label>
+                        <input class="input w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter your name" type="text" id="name">
+                        <label for="email">Email Address</label>
+                        <input class="input w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email address" type="email" id="email" required="">
+                        <label for="Message">Your Message</label>
+                        <textarea placeholder="Enter your message" maxlength="5000" id="Message" name="Message" data-name="Message" class="input w-input"></textarea>
+                        <input type="submit" data-wait="Please wait..." class="btn w-button" value="Submit">
+                    </form>
+                    <div class="success w-form-done">
+                        <div>Thank you! Your submission has been received! We'll be in touch soon!</div>
+                    </div>
+                    <div class="error w-form-fail">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="footer-logo-column">
+                    <a href="/" class="w-inline-block">
+                        <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e7ff57adad44d1f072965b6_logo.svg" alt="Acme Outdoors Logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://twitter.com/webflow" target="_blank" class="social-footer-link w-inline-block">
+                        <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e8407a25b6234aeec960fb9_Twitter_Social_Icon_Rounded_Square_White.svg" width="30" alt="Twitter Logo">
+                    </a>
+                    <a href="https://www.facebook.com/webflow" class="social-footer-link w-inline-block">
+                        <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e8407aa3fb6cf5576f1658b_Facebook%20Logo.svg" width="30" alt="Facebook Logo">
+                    </a>
+                    <a href="https://www.instagram.com/webflow/" target="_blank" class="social-footer-link w-inline-block">
+                        <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e840774014326b74bbeeeb6_Insta.svg" width="30" alt="Instagram Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom-wrapper">
+                <div class="small footer-small">Made In <a href="https://webflow.com" target="_blank">Webflow</a>. © 2020.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
