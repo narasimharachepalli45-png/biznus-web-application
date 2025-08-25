@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <style>
-                  * {
+         * {
             box-sizing: border-box;
         }
         div {
             display: block;
             unicode-bidi: isolate;
+        }
+        html {
+            -webkit-text-size-adjust: 100%;
+            display: block;
+        }
+        :root {
+            view-transition-name: root;
         }
         body {
             font-family: Sen, sans-serif;
@@ -156,6 +163,7 @@
             background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url(/images/home.jpg);
             background-position: 0px 0px, 50% 50%;
             background-size: auto, cover;
+
         }
         .hero-wrapper {
             display: flex;
@@ -603,6 +611,7 @@
                         <a href="/shop" class="nav-link w-nav-link">Shop</a>
                         <a href="/donations" class="nav-link w-nav-link">Donate</a>
                         <a href="/contact" class="nav-link w-nav-link">Contact</a>
+                        <img src="https://cdn.prod.website-files.com/5e7ff3ec0c4ef4c974fa99e3/5e86146bb854797d12a30a13_cart.svg" alt="" class="cart-icon">
                     </nav>
                 </div>
             </div>
